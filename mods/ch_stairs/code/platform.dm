@@ -94,4 +94,7 @@
 		qdel_self()
 		return TRUE
 
-	return FALSE
+	if (isScrewdriver(tool))
+		return TRUE
+
+	return ..()
