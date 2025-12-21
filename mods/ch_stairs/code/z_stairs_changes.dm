@@ -9,8 +9,8 @@
 
 
 // /obj/structure/stairs
-// 	icon = 'mods/ch_stairs/icons/zstairs.dmi'
-// 	icon_state = "above"
+//  	icon = 'mods/ch_stairs/icons/zstairs.dmi'
+//  	icon_state = "above"
 
 // /obj/structure/stairs/Crossed(mob/living/M)
 // 	if(istype(M))
