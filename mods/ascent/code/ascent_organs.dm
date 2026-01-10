@@ -2,6 +2,7 @@
 	name = "mantid vocal synthesiser"
 	assists_languages = list(LANGUAGE_SKRELLIAN, LANGUAGE_HUMAN_RUSSIAN, LANGUAGE_GUTTER, LANGUAGE_HUMAN_EURO, LANGUAGE_EAL)
 
+
 /obj/item/organ/external/groin/insectoid/mantid
 	name = "central support limb"
 	action_button_name = "Weave Razorweb"
@@ -58,6 +59,7 @@
 	cooldown = FALSE
 	refresh_action_button()
 
+
 /obj/item/organ/external/head/insectoid/mantid
 	name = "crested head"
 	action_button_name = "Spit Razorweb"
@@ -92,6 +94,7 @@
 /obj/item/organ/external/head/insectoid/mantid/proc/reset_cooldown()
 	cooldown = FALSE
 	refresh_action_button()
+
 
 /obj/item/organ/internal/eyes/insectoid/nabber/ascent
 	eye_icon = null // eye overlays mess with helmets, eyes are visible over everything. Some dumb workaround

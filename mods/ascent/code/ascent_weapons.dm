@@ -81,6 +81,7 @@
 	impact_type = /obj/projectile/laser_particle/impact
 	penetration_modifier = 0.5
 
+
 /// pistol
 /obj/item/gun/energy/particle/small
 	name = "particle projector"
@@ -106,6 +107,7 @@
 	armor_penetration = 20
 	fire_sound= 'sound/weapons/scan.ogg'
 	penetration_modifier = 0.3
+
 
 /// flechette
 /obj/item/gun/energy/particle/flechette

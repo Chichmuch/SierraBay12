@@ -49,6 +49,7 @@
 	req_access = list(access_ascent)
 	var/mantid_caste = SPECIES_MANTID_ALATE
 
+
 // Renamed blade.
 /obj/item/rig_module/mounted/energy/energy_blade/mantid
 	name = "nanoblade projector"
@@ -76,6 +77,7 @@
 	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
 	icon_state = "rifle"
 	laser = /obj/item/gun/energy/particle
+
 
 /obj/item/rig_module/device/multitool
 	name = "mantid integrated multitool"
@@ -139,6 +141,7 @@
 /obj/item/rig_module/device/clustertool/IsCrowbar()
 	return device && device.IsCrowbar()
 
+
 // Atmosphere/jetpack filler.
 /obj/item/tank/mantid
 	name = "mantid gas tank"
@@ -152,6 +155,7 @@
 /obj/item/tank/mantid/oxygen
 	name = "mantid oxygen tank"
 	starting_pressure = list(OXYGEN = 6 * ONE_ATMOSPHERE)
+
 
 // Boilerplate due to hard typechecks in jetpack code. Todo: make it an extension.
 /obj/item/tank/jetpack/ascent
@@ -176,6 +180,7 @@
 	if(air_contents.total_moles < gas_regen_cap)
 		air_contents.adjust_gas(refill_gas_type, gas_regen_amount)
 
+
 /obj/item/tank/mantid/reactor
 	name = "mantid gas reactor"
 	desc = "A mantid gas processing plant that continuously synthesises 'breathable' atmosphere."
@@ -198,6 +203,7 @@
 	var/obj/item/rig/holder = loc
 	if(air_contents.total_moles < gas_regen_cap && istype(holder) && holder.cell && holder.cell.use(charge_cost))
 		air_contents.adjust_gas(refill_gas_type, gas_regen_amount)
+
 
 // Chem dispenser.
 /obj/item/rig_module/chem_dispenser/mantid
@@ -230,6 +236,7 @@
 		list("glucose",             "glucose",             /datum/reagent/nutriment/glucose,  30)
 	)
 
+
 /obj/item/rig_module/device/mantid_anomaly_detector
 	name = "mantid anomaly detector module"
 	desc = "Anomaly detection device of mantid design."
@@ -242,6 +249,7 @@
 	selectable = 0
 	device = /obj/item/clothing/gloves/anomaly_detector/mantid
 	origin_tech = list(TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_ENGINEERING = 7)
+
 
 // Rig definitions.
 /obj/item/rig/mantid/gyne
@@ -353,6 +361,7 @@
 			to_chat(H, "<span class='danger'>Your species cannot wear \the [src].</span>")
 			. = 0
 
+
 /obj/item/clothing/head/helmet/space/rig/mantid
 	light_color = "#00ffff"
 	icon = 'mods/ascent/icons/obj/clothing/obj_head.dmi'
@@ -405,6 +414,7 @@
 		SPECIES_NABBER =                 'icons/mob/species/nabber/onmob_hands_gas.dmi',
 		SPECIES_MONARCH_QUEEN =          'icons/mob/species/nabber/msq/onmob_hands_msq.dmi'
 		)
+
 
 //Add Caulship Specific Exosuits
 

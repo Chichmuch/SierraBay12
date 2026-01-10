@@ -9,6 +9,7 @@
 	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
 	icon_state = "multitool"
 
+
 /obj/item/clothing/gloves/anomaly_detector/mantid
 	color = COLOR_ASCENT_PURPLE
 	name = "mantid anomaly detector"

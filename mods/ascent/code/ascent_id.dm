@@ -4,6 +4,7 @@ var/global/const/access_ascent = "ACCESS_ASCENT"
 	desc = "Ascent Materiel"
 	access_type = ACCESS_TYPE_NONE
 
+
 // ID 'card'
 /obj/item/card/id/ascent
 	name = "alien chip"
@@ -30,6 +31,7 @@ var/global/const/access_ascent = "ACCESS_ASCENT"
 
 /obj/item/card/id/ascent/show()
 	return
+
 
 // ID implant/organ/interface device.
 /obj/item/organ/internal/controller

@@ -24,6 +24,7 @@
 	uniform = /obj/item/clothing/under/harness
 	mask = /obj/item/clothing/mask/gas/ascent/monarch
 
+
 /obj/item/clothing/mask/gas/ascent
 	name = "mantid facemask"
 	desc = "An alien facemask with chunky gas filters and a breathing valve."
@@ -61,6 +62,7 @@
 	body_parts_covered = 0
 	filtered_gases = list(GAS_METHYL_BROMIDE)
 
+
 /obj/item/clothing/shoes/magboots/ascent
 	name = "mantid mag-claws"
 	desc = "A set of powerful gripping claws."
@@ -72,6 +74,7 @@
 		SPECIES_MANTID_GYNE =  'mods/ascent/icons/mob/gyne/onmob/onmob_shoes_gyne.dmi',
 		SPECIES_MANTID_ALATE = 'mods/ascent/icons/mob/alate/onmob/onmob_shoes_alate.dmi'
 	)
+
 
 /obj/item/clothing/under/ascent
 	name = "mantid undersuit"
@@ -90,6 +93,7 @@
 	name = "small gear harness"
 	desc = "A tangle of straps for someone really tiny."
 	icon = 'icons/mob/species/nabber/onmob_belt_gas.dmi'*/
+
 
 /obj/item/clothing/suit/storage/ascent
 	name = "mantid gear harness"

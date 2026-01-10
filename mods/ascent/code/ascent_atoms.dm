@@ -1,18 +1,15 @@
 // Submap specific atom definitions.
 
-MANTIDIFY(/obj/item/storage/bag/trash/purple, 				"sample collection carrier",	"material storage")
-MANTIDIFY(/obj/structure/bed/chair/padded/purple,			"mantid nest",					"resting place")
-MANTIDIFY(/obj/item/pickaxe/diamonddrill,        			"lithobliterator",				"drilling")
-MANTIDIFY(/obj/item/tank/jetpack/carbondioxide, 			"maneuvering pack",				"propulsion")
-MANTIDIFY(/obj/item/device/scanner/plant, 		 			"gazefloranotator", 			"plant scanning")
-MANTIDIFY(/obj/item/device/scanner/xenobio, 	 			"xenonascerator", 				"xenolife scanning")
-MANTIDIFY(/obj/item/device/scanner/health, 		 			"healthoseefer", 				"medicine")
-MANTIDIFY(/obj/item/device/scanner/gas, 		 			"seegasoscanator", 				"atmospherics")
-MANTIDIFY(/obj/item/device/lightreplacer, 					"swabulpternator",				"light replacing")
-MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent sprayer",		"sterilizing")
+// MANTIDIFY(/obj/item/storage/bag/trash/purple, 				"sample collection carrier",	"material storage")
+/obj/item/storage/bag/trash/purple/ascent
+	name = "sample collection bag"
+	desc = "A durable bag used by mantids for collecting various samples."
 
 
+// MANTIDIFY(/obj/structure/bed/chair/padded/purple,			"mantid nest",					"resting place")
 /obj/structure/bed/chair/padded/purple/ascent
+	name = "nest chair"
+	desc = "Some kind of strange alien resting place technology."
 	icon_state = "nest_chair"
 	base_icon = "nest_chair"
 	icon = 'mods/ascent/icons/obj/ascent_doodads.dmi'
@@ -33,12 +30,58 @@ MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent spraye
 	base_icon = "bar_stool"
 	color = "#a33fbf"
 
+
+// MANTIDIFY(/obj/item/pickaxe/diamonddrill,        			"lithobliterator",				"drilling")
+/obj/item/pickaxe/diamonddrill/ascent
+	name = "mantid lithobliterator"
+	desc = "A powerful drilling tool used by mantids for geological sampling."
+
+
+// MANTIDIFY(/obj/item/tank/jetpack/carbondioxide, 			"maneuvering pack",				"propulsion")
+/obj/item/tank/jetpack/carbondioxide/ascent
+	name = "mantid maneuvering pack"
+	desc = "A jetpack-like propulsion device used by mantids for controlled movement in low-gravity environments."
+
+
+// MANTIDIFY(/obj/item/device/scanner/plant, 		 			"gazefloranotator", 			"plant scanning")
+/obj/item/device/scanner/plant/ascent
+	name = "mantid gazefloranotator"
+	desc = "A specialized scanner used by mantids to analyze plant life."
+
+// MANTIDIFY(/obj/item/device/scanner/xenobio, 	 			"xenonascerator", 				"xenolife scanning")
+/obj/item/device/scanner/xenobio/ascent
+	name = "mantid xenonascerator"
+	desc = "A device used by mantids to scan and analyze alien lifeforms."
+
+// MANTIDIFY(/obj/item/device/scanner/health, 		 			"healthoseefer", 				"medicine")
+/obj/item/device/scanner/health/ascent
+	name = "mantid healthoseefer"
+	desc = "A medical scanner used by mantids to assess the health of organisms."
+
+// MANTIDIFY(/obj/item/device/scanner/gas, 		 			"seegasoscanator", 				"atmospherics")
+/obj/item/device/scanner/gas/ascent
+	name = "mantid seegasoscanator"
+	desc = "An atmospheric scanner used by mantids to analyze gas compositions."
+
+
+// MANTIDIFY(/obj/item/device/lightreplacer, 					"swabulpternator",				"light replacing")
+/obj/item/device/lightreplacer/ascent
+	name = "mantid swabulpternator"
+	desc = "A device used by mantids to replace and repair light sources."
+
 /obj/item/light/tube/ascent
 	name = "mantid light filament"
 	color = COLOR_CYAN
 	b_colour = COLOR_CYAN
 	desc = "Some kind of strange alien lightbulb technology."
 	random_tone = FALSE
+
+
+// MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent sprayer",		"sterilizing")
+/obj/item/reagent_containers/spray/sterilizine/ascent
+	name = "mantid cleaning agent sprayer"
+	desc = "A device used by mantids to sterilize surfaces."
+
 
 /obj/item/stock_parts/computer/hard_drive/portable/design/mantid
 	name = "mantid designs"
@@ -84,6 +127,7 @@ MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent spraye
 		/datum/design/autolathe/general/handcuffs,
 		)
 
+
 // Self-charging power cell.
 /obj/item/cell/mantid
 	name = "mantid microfusion plant"
@@ -105,6 +149,7 @@ MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent spraye
 /obj/item/cell/mantid/Process()
 	if(charge < maxcharge)
 		give(recharge_amount)
+
 
 /mob/living/silicon/robot/flying/ascent
 	desc = "A small, sleek, dangerous-looking hover-drone."
@@ -147,13 +192,6 @@ MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent spraye
 	components["diagnosis unit"] = new/datum/robot_component/diagnosis_unit(src)
 	components["armour"] =         new/datum/robot_component/armour/light(src)
 
-// Since they don't have binary, camera or radio to soak
-// damage, they get some hefty buffs to cell and actuator.
-/datum/robot_component/actuator/ascent
-	max_damage = 100
-/datum/robot_component/cell/ascent
-	max_damage = 100
-
 /mob/living/silicon/robot/flying/ascent/Initialize()
 	. = ..()
 	name = "[uppertext(pick(GLOB.gyne_geoforms))]-[++ascent_drone_count]"
@@ -165,3 +203,11 @@ MANTIDIFY(/obj/item/reagent_containers/spray/sterilizine,	"cleaning agent spraye
 /mob/living/silicon/robot/flying/ascent/emp_act(severity)
 	SHOULD_CALL_PARENT(FALSE)
 	confused = min(confused + rand(3, 5), (severity == 1 ? 40 : 30))
+
+
+// Since they don't have binary, camera or radio to soak
+// damage, they get some hefty buffs to cell and actuator.
+/datum/robot_component/actuator/ascent
+	max_damage = 100
+/datum/robot_component/cell/ascent
+	max_damage = 100

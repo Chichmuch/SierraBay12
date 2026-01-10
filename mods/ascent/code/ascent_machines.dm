@@ -1,16 +1,115 @@
-MANTIDIFY(/obj/machinery/power/apc/hyper, "mantid power node", "power controller")
-MANTIDIFY(/obj/machinery/atmospherics/unary/vent_pump/on, "mantid atmosphere outlet", "vent")
-MANTIDIFY(/obj/machinery/atmospherics/unary/vent_scrubber/on, "mantid atmosphere intake", "scrubber")
-MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad")
-MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
-MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
-MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
-MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shield")
+// MANTIDIFY(/obj/machinery/power/apc/hyper, "mantid power node", "power controller")
+/obj/machinery/power/apc/hyper/ascent
+	name = "power node"
+	desc = "A strange alien power distribution node."
+	req_access = list(access_ascent)
+	base_type = /obj/machinery/power/apc
 
+/obj/machinery/power/apc/hyper/ascent/north
+	name = "north bump"
+	pixel_y = 24
+	dir = NORTH
+
+/obj/machinery/power/apc/hyper/ascent/south
+	name = "south bump"
+	pixel_y = -24
+	dir = SOUTH
+
+/obj/machinery/power/apc/hyper/ascent/east
+	name = "east bump"
+	pixel_x = 24
+	dir = EAST
+
+/obj/machinery/power/apc/hyper/ascent/west
+	name = "west bump"
+	pixel_x = -24
+	dir = WEST
+
+
+// MANTIDIFY(/obj/machinery/atmospherics/unary/vent_pump/on, "mantid atmosphere outlet", "vent")
+/obj/machinery/atmospherics/unary/vent_pump/on/ascent
+	name = "atmosphere outlet"
+	desc = "An advanced alien atmosphere outlet."
+
+// MANTIDIFY(/obj/machinery/atmospherics/unary/vent_scrubber/on, "mantid atmosphere intake", "scrubber")
+/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent
+	name = "atmosphere intake"
+	desc = "An advanced alien atmosphere intake."
+
+/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/reset_scrubbing()
+	. = ..()
+	remove_from_scrubbing(GAS_METHYL_BROMIDE)
+	add_to_scrubbing(GAS_NITROGEN)
+
+/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/shuttle
+	stock_part_presets = list(
+		/singleton/stock_part_preset/radio/receiver/vent_scrubber/shuttle = 1,
+		/singleton/stock_part_preset/radio/event_transmitter/vent_scrubber/shuttle = 1
+	)
+
+
+// MANTIDIFY(/obj/machinery/hologram/holopad/longrange, "mantid holopad", "holopad")
+/obj/machinery/hologram/holopad/longrange/ascent
+	name = "mantid holopad"
+	desc = "A sleek alien holopad, capable of long-range communication."
+	req_access = list(access_ascent)
+
+
+// MANTIDIFY(/obj/machinery/optable, "mantid operating table", "operating table")
 /obj/machinery/optable/ascent
+	name = "operating table"
+	desc = "A strange alien operating table."
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/optable
 	color = "#952abf"
+
+
+// MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
+/obj/machinery/door/airlock/external/bolted/ascent
+	name = "mantid airlock"
+	desc = "A strange alien airlock door."
+	door_color = COLOR_PURPLE
+	stripe_color = COLOR_GRAY40
+
+
+// MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
+/obj/machinery/porta_turret/ascent
+	name = "automatic alien-lifeform defense system"
+	desc = "A strange alien automated turret system designed to neutralize hostile alien lifeforms on sight"
+	ailock = 1
+	check_synth	 = 0
+	check_access = 1
+	check_anomalies = 1
+	check_arrest = 0
+	check_records = 0
+	req_access = list(access_ascent)
+	installation = /obj/item/gun/energy/particle
+	shot_sound = 'sound/weapons/Laser3.ogg'
+
+
+// MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shield")
+/obj/machinery/power/shield_generator/ascent
+	name = "shield projector"
+	desc = "A strange alien shield generator that projects a protective energy field around a designated area."
+	base_type = /obj/machinery/power/shield_generator/ascent
+	spinup_delay = 10
+
+/obj/item/stock_parts/circuitboard/shield_generator/ascent
+	name = "circuit board (mantid shield projector)"
+	board_type = "machine"
+	build_path = /obj/machinery/power/shield_generator/ascent
+	origin_tech = list(TECH_MAGNET = 7, TECH_POWER = 5)
+	req_components = list(
+							/obj/item/stock_parts/capacitor = 1,
+							/obj/item/stock_parts/capacitor/super = 1,
+							/obj/item/stock_parts/micro_laser = 1,
+							/obj/item/stock_parts/smes_coil/advanced = 1)
+	additional_spawn_components = list(
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/stock_parts/keyboard = 1,
+		/obj/item/stock_parts/power/apc/buildable = 1
+	)
+
 
 /obj/machinery/portable_atmospherics/hydroponics/ascent
 	name = "mantid algae vat"
@@ -37,16 +136,7 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	sampled = 0
 	. = ..()
 
-/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/reset_scrubbing()
-	. = ..()
-	remove_from_scrubbing(GAS_METHYL_BROMIDE)
-	add_to_scrubbing(GAS_NITROGEN)
 
-/obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/shuttle
-	stock_part_presets = list(
-		/singleton/stock_part_preset/radio/receiver/vent_scrubber/shuttle = 1,
-		/singleton/stock_part_preset/radio/event_transmitter/vent_scrubber/shuttle = 1
-	)
 /obj/machinery/recharge_station/ascent
 	name = "mantid recharging dock"
 	desc = "An oddly organic aperture stuffed with power connectors."
@@ -54,6 +144,7 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	overlay_icon = 'mods/ascent/icons/obj/power/mantid_charger.dmi'
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/recharge_station
+
 
 /obj/machinery/body_scanconsole/ascent
 	name = "mantid scanner console"
@@ -78,6 +169,7 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_chemicals = list("Spaceacillin" = /datum/reagent/spaceacillin, "Bromide" = /datum/reagent/toxin/bromide, "Dylovene" = /datum/reagent/dylovene, "Inaprovaline" = /datum/reagent/inaprovaline)
 
+
 /obj/machinery/fabricator/ascent
 	name = "\improper Ascent nanofabricator"
 	desc = "A squat, complicated fabrication system clad in purple polymer."
@@ -88,12 +180,6 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	base_type = /obj/machinery/fabricator
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 
-/obj/machinery/power/apc/hyper/ascent
-	req_access = list(access_ascent)
-	base_type = /obj/machinery/power/apc
-
-/obj/machinery/hologram/holopad/longrange/ascent
-	req_access = list(access_ascent)
 
 /obj/catwalk_plated/ascent
 	plating_type = /singleton/flooring/tiling_ascent
@@ -113,38 +199,12 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 /obj/machinery/door/airlock/ascent/set_airlock_overlays(state)
 	return
 
-/obj/machinery/door/airlock/external/bolted/ascent
-	door_color = COLOR_PURPLE
-	stripe_color = COLOR_GRAY40
-
-/obj/machinery/power/apc/hyper/ascent/north
-	name = "north bump"
-	pixel_x = 0
-	pixel_y = 24
-	dir = NORTH
-
-/obj/machinery/power/apc/hyper/ascent/south
-	name = "south bump"
-	pixel_x = 0
-	pixel_y = -24
-	dir = SOUTH
-
-/obj/machinery/power/apc/hyper/ascent/east
-	name = "east bump"
-	pixel_x = 24
-	pixel_y = 0
-	dir = EAST
-
-/obj/machinery/power/apc/hyper/ascent/west
-	name = "west bump"
-	pixel_x = -24
-	pixel_y = 0
-	dir = WEST
 
 /obj/machinery/light/ascent
 	name = "mantid light"
 	light_type = /obj/item/light/tube/ascent
 	desc = "Some kind of strange alien lighting technology."
+
 
 /obj/machinery/computer/ship/helm/ascent
 	icon_state = "ascent"
@@ -180,6 +240,7 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	)
 	autorun_program = /datum/computer_file/program/ship/sensors/ascent
 
+
 /datum/computer_file/program/ship/sensors/ascent
 	nanomodule_path = /datum/nano_module/program/ship/sensors/ascent
 	available_on_ntnet = FALSE
@@ -188,12 +249,14 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	print_language = LANGUAGE_MANTID_VOCAL
 	modify_access_req = null
 
+
 /obj/machinery/computer/air_control/ascent
 	icon_state = "ascent"
 	icon_keyboard = "ascent_key"
 	req_access = list(access_ascent)
 	construct_state = /singleton/machine_construction/default/panel_closed/computer/no_deconstruct
 	base_type = /obj/machinery/computer/air_control/ascent
+
 
 // This is an absolutely stupid machine. Basically the same as the debug one with some alterations.
 // It is a placeholder for a proper reactor setup (probably a RUST descendant)
@@ -256,6 +319,12 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	if(on)
 		add_avail(output_power)
 
+/obj/machinery/power/ascent_reactor/damaged
+	name = "unstable mantid fusion stack"
+	output_power = 2631 KILOWATTS
+	field_color = COLOR_RED
+
+
 /obj/machinery/power/smes/buildable/preset/ascent
 	name = "mantid battery"
 	desc = "Some kind of strange alien SMES technology."
@@ -269,6 +338,7 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 	_input_on = TRUE
 	_output_on = TRUE
 	_fully_charged = TRUE
+
 
 /obj/machinery/cryopod/ascent_spawn
 	name = "mantid cryotank"
@@ -293,7 +363,6 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 
 	var/mob/living/carbon/announcer
 
-
 /obj/machinery/computer/cryopod/ascent_spawn/Initialize()
 	. = ..()
 	announcer = new /mob/living/carbon(src)
@@ -304,39 +373,3 @@ MANTIDIFY(/obj/machinery/power/shield_generator, "mantid shield generator", "shi
 /obj/machinery/computer/cryopod/ascent_spawn/Destroy()
 	qdel(announcer)
 	. = ..()
-
-/obj/machinery/power/ascent_reactor/damaged
-	name = "unstable mantid fusion stack"
-	output_power = 2631 KILOWATTS
-	field_color = COLOR_RED
-
-/obj/machinery/porta_turret/ascent
-	ailock = 1
-	check_synth	 = 0
-	check_access = 1
-	check_anomalies = 1
-	check_arrest = 0
-	check_records = 0
-	req_access = list(access_ascent)
-	installation = /obj/item/gun/energy/particle
-	shot_sound = 'sound/weapons/Laser3.ogg'
-
-/obj/machinery/power/shield_generator/ascent
-	base_type = /obj/machinery/power/shield_generator/ascent
-	spinup_delay = 10
-
-/obj/item/stock_parts/circuitboard/shield_generator/ascent
-	name = "circuit board (mantid shield generator)"
-	board_type = "machine"
-	build_path = /obj/machinery/power/shield_generator/ascent
-	origin_tech = list(TECH_MAGNET = 7, TECH_POWER = 5)
-	req_components = list(
-							/obj/item/stock_parts/capacitor = 1,
-							/obj/item/stock_parts/capacitor/super = 1,
-							/obj/item/stock_parts/micro_laser = 1,
-							/obj/item/stock_parts/smes_coil/advanced = 1)
-	additional_spawn_components = list(
-		/obj/item/stock_parts/console_screen = 1,
-		/obj/item/stock_parts/keyboard = 1,
-		/obj/item/stock_parts/power/apc/buildable = 1
-	)

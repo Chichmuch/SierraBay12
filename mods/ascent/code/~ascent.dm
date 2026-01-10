@@ -1,5 +1,5 @@
 #undef COLOR_ASCENT_PURPLE
-#undef MANTIDIFY
+// #undef MANTIDIFY
 
 // Ascent culture.
 #undef CULTURE_ASCENT

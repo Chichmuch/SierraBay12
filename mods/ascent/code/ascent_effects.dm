@@ -14,6 +14,7 @@
 /obj/projectile/laser_particle/impact
 	icon_state = "impact_particle"
 
+
 //----------------------------
 // Razorweb
 //----------------------------

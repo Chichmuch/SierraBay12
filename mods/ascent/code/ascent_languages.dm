@@ -48,6 +48,7 @@
 /datum/language/mantid/broadcast(mob/living/speaker, message, speaker_mask)
 	. = ..(speaker, message, speaker.real_name)
 
+
 /datum/language/mantid/nonvocal
 	key = "]"
 	name = LANGUAGE_MANTID_NONVOCAL
@@ -60,23 +61,23 @@
 	shorthand = "KNV"
 	has_written_form = FALSE
 
-#define MANTID_SCRAMBLE_CACHE_LEN 20
-/datum/language/mantid/nonvocal/scramble(input)
-	if(input in scramble_cache)
-		var/n = scramble_cache[input]
-		scramble_cache -= input
-		scramble_cache[input] = n
-		return n
-	var/i = length(input)
-	var/scrambled_text = ""
-	while(i)
-		i--
-		scrambled_text += "<font color='[get_random_colour(1)]'>*</font>"
-	scramble_cache[input] = scrambled_text
-	if(LAZYLEN(scramble_cache) > MANTID_SCRAMBLE_CACHE_LEN)
-		scramble_cache.Cut(1, LAZYLEN(scramble_cache)-MANTID_SCRAMBLE_CACHE_LEN-1)
-	return scrambled_text
-#undef MANTID_SCRAMBLE_CACHE_LEN
+// #define MANTID_SCRAMBLE_CACHE_LEN 20
+// /datum/language/mantid/nonvocal/scramble(input)
+// 	if(input in scramble_cache)
+// 		var/n = scramble_cache[input]
+// 		scramble_cache -= input
+// 		scramble_cache[input] = n
+// 		return n
+// 	var/i = length(input)
+// 	var/scrambled_text = ""
+// 	while(i)
+// 		i--
+// 		scrambled_text += "<font color='[get_random_colour(1)]'>*</font>"
+// 	scramble_cache[input] = scrambled_text
+// 	if(LAZYLEN(scramble_cache) > MANTID_SCRAMBLE_CACHE_LEN)
+// 		scramble_cache.Cut(1, LAZYLEN(scramble_cache)-MANTID_SCRAMBLE_CACHE_LEN-1)
+// 	return scrambled_text
+// #undef MANTID_SCRAMBLE_CACHE_LEN
 
 /datum/language/mantid/nonvocal/can_speak_special(mob/living/speaker)
 	if(istype(speaker) && speaker.isSynthetic())
@@ -85,6 +86,7 @@
 		var/mob/living/carbon/human/H = speaker
 		return (H.species.name == SPECIES_MANTID_ALATE || H.species.name == SPECIES_MANTID_GYNE)
 	return FALSE
+
 
 /datum/language/mantid/worldnet
 	key = "\["
