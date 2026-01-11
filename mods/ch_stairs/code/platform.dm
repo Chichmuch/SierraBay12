@@ -1,10 +1,10 @@
 /obj/structure/railing/platform
 	name = "platform"
-	desc = "A simple platform designed to protect against careless trespass."
+	desc = "A simple platform designed for elevated spaces."
 	icon = 'mods/ch_stairs/icons/platform.dmi'
 	icon_state = "preview"
 	density = TRUE
-	climb_speed_mult = 0.35
+	climb_speed_mult = 0.2
 	anchored = TRUE
 	health_max = 100
 
@@ -17,15 +17,16 @@
 
 /obj/structure/railing/platform/Initialize(mapload, material_key)
 	. = ..()
-	desc = "A simple [material.display_name] platform designed to protect against careless trespass."
+	desc = "A simple [material.display_name] platform designed for elevated spaces."
 
-/obj/structure/railing/platform/on_update_icon(update_neighbors = TRUE)
+/obj/structure/railing/platform/on_update_icon(update_neighbors = FALSE)
 	NeighborsCheck(update_neighbors)
 	ClearOverlays()
 	if (!neighbor_status)
 		icon_state = "base"
 		AddOverlays(image(icon, "_base", layer = ABOVE_HUMAN_LAYER))
 	else
+		icon_state = null
 		if (neighbor_status & 32)
 			AddOverlays(image(icon, "corner"))
 		if ((neighbor_status & 16) || !(neighbor_status & 32) || (neighbor_status & 64))
@@ -50,7 +51,6 @@
 				AddOverlays(image(icon, "_mcorner", pixel_x = pix_offset_x, pixel_y = pix_offset_y, layer = ABOVE_HUMAN_LAYER))
 
 /obj/structure/railing/platform/use_tool(obj/item/tool, mob/user, list/click_params)
-
 	if (isWelder(tool))
 		update_icon()
 		if (!health_damaged())
@@ -94,17 +94,17 @@
 
 	if (isScrewdriver(tool))
 		playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
-		// user.visible_message(
-		// 	SPAN_NOTICE("\The [user] starts [anchored ? "un" : null]fastening \the [src] [anchored ? "from" : "to"] the floor with \a [tool]."),
-		// 	SPAN_NOTICE("You start [anchored ? "un" : null]fastening \the [src] [anchored ? "from" : "to"] the floor with \the [tool].")
-		// )
+		user.visible_message(
+			SPAN_NOTICE("\The [user] starts mounting \the [src] with \a [tool]."),
+			SPAN_NOTICE("You start mounting \the [src] with \the [tool].")
+		)
 		if (!user.do_skilled((tool.toolspeed * 1) SECONDS, SKILL_CONSTRUCTION, src, do_flags = DO_REPAIR_CONSTRUCT) || !user.use_sanity_check(src, tool))
 			return TRUE
-		// playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
-		// user.visible_message(
-		// 	SPAN_NOTICE("\The [user] [anchored ? "un" : null]fastens \the [src] [anchored ? "from" : "to"] the floor with \a [tool]."),
-		// 	SPAN_NOTICE("You [anchored ? "un" : null]fasten \the [src] [anchored ? "from" : "to"] the floor with \the [tool].")
-		// )
+		playsound(loc, 'sound/items/Screwdriver.ogg', 50, TRUE)
+		user.visible_message(
+			SPAN_NOTICE("\The [user] mounts \the [src] with \a [tool]."),
+			SPAN_NOTICE("You mount \the [src] with \the [tool].")
+		)
 		layer = layer == CATWALK_LAYER ? OBJ_LAYER : CATWALK_LAYER
 		update_icon()
 		return TRUE

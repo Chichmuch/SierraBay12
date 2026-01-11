@@ -1,9 +1,24 @@
 /datum/stack_recipe/furniture/stairs
 	title = "interior stairs"
-	result_type = /obj/structure/fake_stairs
+	result_type = /obj/structure/deco_stairs
 	req_amount = 6
 	time = 50
 	send_material_data = 0
+
+/datum/stack_recipe/furniture/stairs_edge
+	title = "interior stairs (edge)"
+	result_type = /obj/structure/deco_stairs/edge
+	req_amount = 6
+	time = 50
+	send_material_data = 0
+
+/material/steel/generate_recipes(reinforce_material)
+	. = ..()
+	if(reinforce_material)
+		return
+	. += new/datum/stack_recipe/furniture/stairs(src)
+	. += new/datum/stack_recipe/furniture/stairs_edge(src)
+
 
 /datum/stack_recipe/furniture/platform
 	title = "platform"
@@ -11,13 +26,6 @@
 	req_amount = 3
 	time = 40
 	send_material_data = 1
-
-
-/material/steel/generate_recipes(reinforce_material)
-	. = ..()
-	if(reinforce_material)
-		return
-	. += new/datum/stack_recipe/furniture/stairs(src)
 
 /material/generate_recipes()
 	.=..()
