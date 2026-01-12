@@ -17,6 +17,7 @@
 /obj/machinery/alarm/ascent
 	name = "ascent atmosphere alarm"
 	desc = "A specialized atmosphere alarm designed for Ascent Mantid environments."
+	icon = 'mods/ascent/icons/obj/machines/airalarm.dmi'
 	req_access = list(access_ascent)
 	construct_state = null
 	environment_type = /singleton/environment_data/mantid

@@ -4,7 +4,7 @@
 /obj/item/storage/bag/trash/purple/ascent
 	name = "sample collection bag"
 	desc = "A durable bag used by mantids for collecting various samples."
-
+	icon = 'mods/ascent/icons/obj/items.dmi'
 
 // MANTIDIFY(/obj/structure/bed/chair/padded/purple,			"mantid nest",					"resting place")
 /obj/structure/bed/chair/padded/purple/ascent
@@ -12,7 +12,6 @@
 	desc = "Some kind of strange alien resting place technology."
 	icon_state = "nest_chair"
 	base_icon = "nest_chair"
-	icon = 'mods/ascent/icons/obj/ascent_doodads.dmi'
 	buckle_pixel_shift = list(0,5,0)
 	pixel_z = 0
 
@@ -35,39 +34,55 @@
 /obj/item/pickaxe/diamonddrill/ascent
 	name = "mantid lithobliterator"
 	desc = "A powerful drilling tool used by mantids for geological sampling."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "drill"
 
 
 // MANTIDIFY(/obj/item/tank/jetpack/carbondioxide, 			"maneuvering pack",				"propulsion")
 /obj/item/tank/jetpack/carbondioxide/ascent
-	name = "mantid maneuvering pack"
+	name = "maneuvering pack"
 	desc = "A jetpack-like propulsion device used by mantids for controlled movement in low-gravity environments."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "jetpack"
 
 
 // MANTIDIFY(/obj/item/device/scanner/plant, 		 			"gazefloranotator", 			"plant scanning")
 /obj/item/device/scanner/plant/ascent
-	name = "mantid gazefloranotator"
+	name = "gazefloranotator"
 	desc = "A specialized scanner used by mantids to analyze plant life."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "scanner1"
 
 // MANTIDIFY(/obj/item/device/scanner/xenobio, 	 			"xenonascerator", 				"xenolife scanning")
 /obj/item/device/scanner/xenobio/ascent
 	name = "mantid xenonascerator"
 	desc = "A device used by mantids to scan and analyze alien lifeforms."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "scanner2"
 
 // MANTIDIFY(/obj/item/device/scanner/health, 		 			"healthoseefer", 				"medicine")
 /obj/item/device/scanner/health/ascent
 	name = "mantid healthoseefer"
 	desc = "A medical scanner used by mantids to assess the health of organisms."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "scanner3"
 
 // MANTIDIFY(/obj/item/device/scanner/gas, 		 			"seegasoscanator", 				"atmospherics")
 /obj/item/device/scanner/gas/ascent
 	name = "mantid seegasoscanator"
 	desc = "An atmospheric scanner used by mantids to analyze gas compositions."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "scanner4"
 
 
 // MANTIDIFY(/obj/item/device/lightreplacer, 					"swabulpternator",				"light replacing")
 /obj/item/device/lightreplacer/ascent
 	name = "mantid swabulpternator"
 	desc = "A device used by mantids to replace and repair light sources."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+
+/obj/item/device/lightreplacer/ascent/emag_act(remaining_charges, mob/user)
+	return NO_EMAG_ACT
 
 /obj/item/light/tube/ascent
 	name = "mantid light filament"
@@ -81,13 +96,15 @@
 /obj/item/reagent_containers/spray/sterilizine/ascent
 	name = "mantid cleaning agent sprayer"
 	desc = "A device used by mantids to sterilize surfaces."
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "cleaner"
 
 
 /obj/item/stock_parts/computer/hard_drive/portable/design/mantid
 	name = "mantid designs"
 	color = COLOR_ASCENT_PURPLE
-	icon = 'icons/obj/modular_components.dmi'
-	icon_state = "aislot"
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "hard_drive"
 	designs = list(
 		/datum/design/autolathe/device_component,
 		/datum/design/autolathe/device_component/keyboard,
@@ -132,8 +149,8 @@
 /obj/item/cell/mantid
 	name = "mantid microfusion plant"
 	desc = "An impossibly tiny fusion reactor of mantid design."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
-	icon_state = "plant"
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "cell"
 	maxcharge = 1500
 	w_class = ITEM_SIZE_NORMAL
 	var/recharge_amount = 12
@@ -192,9 +209,9 @@
 	components["diagnosis unit"] = new/datum/robot_component/diagnosis_unit(src)
 	components["armour"] =         new/datum/robot_component/armour/light(src)
 
-/mob/living/silicon/robot/flying/ascent/Initialize()
-	. = ..()
-	name = "[uppertext(pick(GLOB.gyne_geoforms))]-[++ascent_drone_count]"
+// /mob/living/silicon/robot/flying/ascent/Initialize()
+// 	. = ..()
+// 	name = "[uppertext(pick(GLOB.gyne_geoforms))]-[++ascent_drone_count]"
 
 // Sorry, you're going to have to actually deal with these guys.
 /mob/living/silicon/robot/flying/ascent/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)

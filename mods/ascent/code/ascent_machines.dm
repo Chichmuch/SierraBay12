@@ -2,6 +2,7 @@
 /obj/machinery/power/apc/hyper/ascent
 	name = "power node"
 	desc = "A strange alien power distribution node."
+	icon = 'mods/ascent/icons/obj/power/apc.dmi'
 	req_access = list(access_ascent)
 	base_type = /obj/machinery/power/apc
 
@@ -30,11 +31,13 @@
 /obj/machinery/atmospherics/unary/vent_pump/on/ascent
 	name = "atmosphere outlet"
 	desc = "An advanced alien atmosphere outlet."
+	icon = 'mods/ascent/icons/obj/machines/vent_pump.dmi'
 
 // MANTIDIFY(/obj/machinery/atmospherics/unary/vent_scrubber/on, "mantid atmosphere intake", "scrubber")
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent
 	name = "atmosphere intake"
 	desc = "An advanced alien atmosphere intake."
+	icon = 'mods/ascent/icons/obj/machines/vent_scrubber.dmi'
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on/ascent/reset_scrubbing()
 	. = ..()
@@ -52,6 +55,7 @@
 /obj/machinery/hologram/holopad/longrange/ascent
 	name = "mantid holopad"
 	desc = "A sleek alien holopad, capable of long-range communication."
+	icon = 'mods/ascent/icons/obj/machines/machinery.dmi'
 	req_access = list(access_ascent)
 
 
@@ -59,17 +63,40 @@
 /obj/machinery/optable/ascent
 	name = "operating table"
 	desc = "A strange alien operating table."
+	icon = 'mods/ascent/icons/obj/machines/optable.dmi'
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/optable
 	color = "#952abf"
 
 
 // MANTIDIFY(/obj/machinery/door/airlock/external/bolted, "mantid airlock", "door")
+/obj/machinery/door/airlock/ascent
+	desc = "Some kind of strange alien door technology."
+	icon =                'mods/ascent/icons/obj/doors/base.dmi'
+	bolts_file =          'mods/ascent/icons/obj/doors/lights_bolts.dmi'
+	deny_file =           'mods/ascent/icons/obj/doors/lights_deny.dmi'
+	lights_file =         'mods/ascent/icons/obj/doors/lights_green.dmi'
+	panel_file =          'mods/ascent/icons/obj/doors/panel.dmi'
+	sparks_damaged_file = 'mods/ascent/icons/obj/doors/sparks_damaged.dmi'
+	sparks_broken_file =  'mods/ascent/icons/obj/doors/sparks_broken.dmi'
+	welded_file =         'mods/ascent/icons/obj/doors/welded.dmi'
+	emag_file =           'mods/ascent/icons/obj/doors/emag.dmi'
+
+/obj/machinery/door/airlock/ascent/set_airlock_overlays(state)
+	return
+
 /obj/machinery/door/airlock/external/bolted/ascent
 	name = "mantid airlock"
 	desc = "A strange alien airlock door."
-	door_color = COLOR_PURPLE
-	stripe_color = COLOR_GRAY40
+	icon =                'mods/ascent/icons/obj/doors/base.dmi'
+	bolts_file =          'mods/ascent/icons/obj/doors/lights_bolts.dmi'
+	deny_file =           'mods/ascent/icons/obj/doors/lights_deny.dmi'
+	lights_file =         'mods/ascent/icons/obj/doors/lights_green.dmi'
+	panel_file =          'mods/ascent/icons/obj/doors/panel.dmi'
+	sparks_damaged_file = 'mods/ascent/icons/obj/doors/sparks_damaged.dmi'
+	sparks_broken_file =  'mods/ascent/icons/obj/doors/sparks_broken.dmi'
+	welded_file =         'mods/ascent/icons/obj/doors/welded.dmi'
+	emag_file =           'mods/ascent/icons/obj/doors/emag.dmi'
 
 
 // MANTIDIFY(/obj/machinery/porta_turret, "mantid automatic alien-lifeform defense system", "turret")
@@ -91,6 +118,7 @@
 /obj/machinery/power/shield_generator/ascent
 	name = "shield projector"
 	desc = "A strange alien shield generator that projects a protective energy field around a designated area."
+	icon = 'mods/ascent/icons/obj/machines/machinery.dmi'
 	base_type = /obj/machinery/power/shield_generator/ascent
 	spinup_delay = 10
 
@@ -114,7 +142,7 @@
 /obj/machinery/portable_atmospherics/hydroponics/ascent
 	name = "mantid algae vat"
 	desc = "Some kind of strange alien hydroponics technology."
-	icon = 'mods/ascent/icons/obj/machines/mantid_hydroponics.dmi'
+	icon = 'mods/ascent/icons/obj/machines/machinery.dmi'
 	closed_system = TRUE
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/portable_atmospherics/hydroponics
@@ -140,8 +168,8 @@
 /obj/machinery/recharge_station/ascent
 	name = "mantid recharging dock"
 	desc = "An oddly organic aperture stuffed with power connectors."
-	icon = 'mods/ascent/icons/obj/power/mantid_charger.dmi'
-	overlay_icon = 'mods/ascent/icons/obj/power/mantid_charger.dmi'
+	icon = 'mods/ascent/icons/obj/machines/machinery.dmi'
+	overlay_icon = 'mods/ascent/icons/obj/machines/machinery.dmi'
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/recharge_station
 
@@ -150,21 +178,21 @@
 	name = "mantid scanner console"
 	desc = "Some kind of strange alien console technology."
 	req_access = list(access_ascent)
-	icon = 'mods/ascent/icons/obj/machines/ascent_sleepers.dmi'
+	icon = 'mods/ascent/icons/obj/machines/sleeper.dmi'
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/body_scanconsole
 
 /obj/machinery/bodyscanner/ascent
 	name = "mantid body scanner"
 	desc = "Some kind of strange alien body scanning technology."
-	icon = 'mods/ascent/icons/obj/machines/ascent_sleepers.dmi'
+	icon = 'mods/ascent/icons/obj/machines/sleeper.dmi'
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_type = /obj/machinery/bodyscanner
 
 /obj/machinery/sleeper/ascent
 	name = "mantid sleeper"
 	desc = "Some kind of strange alien sleeper technology."
-	icon = 'mods/ascent/icons/obj/machines/ascent_sleepers.dmi'
+	icon = 'mods/ascent/icons/obj/machines/sleeper.dmi'
 	base_type = /obj/machinery/sleeper
 	construct_state = /singleton/machine_construction/default/no_deconstruct
 	base_chemicals = list("Spaceacillin" = /datum/reagent/spaceacillin, "Bromide" = /datum/reagent/toxin/bromide, "Dylovene" = /datum/reagent/dylovene, "Inaprovaline" = /datum/reagent/inaprovaline)
@@ -183,21 +211,6 @@
 
 /obj/catwalk_plated/ascent
 	plating_type = /singleton/flooring/tiling_ascent
-
-/obj/machinery/door/airlock/ascent
-	desc = "Some kind of strange alien door technology."
-	icon =                'mods/ascent/icons/obj/doors/base.dmi'
-	bolts_file =          'mods/ascent/icons/obj/doors/lights_bolts.dmi'
-	deny_file =           'mods/ascent/icons/obj/doors/lights_deny.dmi'
-	lights_file =         'mods/ascent/icons/obj/doors/lights_green.dmi'
-	panel_file =          'mods/ascent/icons/obj/doors/panel.dmi'
-	sparks_damaged_file = 'mods/ascent/icons/obj/doors/sparks_damaged.dmi'
-	sparks_broken_file =  'mods/ascent/icons/obj/doors/sparks_broken.dmi'
-	welded_file =         'mods/ascent/icons/obj/doors/welded.dmi'
-	emag_file =           'mods/ascent/icons/obj/doors/emag.dmi'
-
-/obj/machinery/door/airlock/ascent/set_airlock_overlays(state)
-	return
 
 
 /obj/machinery/light/ascent
@@ -263,14 +276,13 @@
 /obj/machinery/power/ascent_reactor
 	name = "mantid fusion stack"
 	desc = "A tall, gleaming assemblage of advanced alien machinery. It hums and crackles with restrained power."
-	icon = 'icons/obj/machines/power/fusion_core.dmi'
+	icon = 'mods/ascent/icons/obj/power/reactor.dmi'
 	icon_state = "core1"
 	density = TRUE
-	color = COLOR_PURPLE
 	var/on = TRUE
 	var/output_power = 9000 KILOWATTS
-	var/image/field_image
-	var/field_color = COLOR_CYAN
+	var/datum/sound_token/sound_token
+	var/sound_id
 
 /obj/machinery/power/ascent_reactor/attack_hand(mob/user)
 	. = ..()
@@ -291,23 +303,10 @@
 /obj/machinery/power/ascent_reactor/on_update_icon()
 	. = ..()
 
-	if(!field_image)
-		field_image = image(icon = 'icons/obj/machines/power/fusion_field.dmi', icon_state = "emfield_s1")
-		field_image.color = field_color
-		field_image.alpha = 50
-		field_image.layer = SINGULARITY_LAYER
-		field_image.appearance_flags |= RESET_COLOR
-
-		var/matrix/M = matrix()
-		M.Scale(3)
-		field_image.transform = M
-
 	if(on)
-		AddOverlays(field_image)
 		set_light(0.8, 1, 6, l_color = COLOR_CYAN)
 		icon_state = "core1"
 	else
-		CutOverlays(field_image)
 		set_light(0)
 		icon_state = "core0"
 
@@ -316,20 +315,28 @@
 	update_icon()
 
 /obj/machinery/power/ascent_reactor/Process()
+	if(!sound_id)
+		sound_id = "[type]_[sequential_id(/obj/machinery/power/ascent_reactor)]"
+
 	if(on)
 		add_avail(output_power)
+
+		if(!sound_token)
+			sound_token = GLOB.sound_player.PlayLoopingSound(src, sound_id, "mods/ascent/sound/ascent_reactor.ogg", volume = 50)
+	else
+		if(sound_token)
+			QDEL_NULL(sound_token)
 
 /obj/machinery/power/ascent_reactor/damaged
 	name = "unstable mantid fusion stack"
 	output_power = 2631 KILOWATTS
-	field_color = COLOR_RED
 
 
 /obj/machinery/power/smes/buildable/preset/ascent
 	name = "mantid battery"
 	desc = "Some kind of strange alien SMES technology."
-	icon = 'mods/ascent/icons/obj/power/mantid_smes.dmi'
-	overlay_icon = 'mods/ascent/icons/obj/power/mantid_smes.dmi'
+	icon = 'mods/ascent/icons/obj/power/power.dmi'
+	overlay_icon = 'mods/ascent/icons/obj/power/power.dmi'
 	uncreated_component_parts = list(
 		/obj/item/stock_parts/smes_coil/advanced = 3
 	)
@@ -343,12 +350,12 @@
 /obj/machinery/cryopod/ascent_spawn
 	name = "mantid cryotank"
 	desc = "A liquid-filled, cloudy tank with strange forms twitching inside."
-	icon = 'icons/obj/machines/medical/cryogenics.dmi'
-	icon_state = "cellold2"
+	icon = 'mods/ascent/icons/obj/machines/cryopod.dmi'
+	icon_state = "base"
 	layer = 4.1
 
-	base_icon_state = "cellold2"
-	occupied_icon_state = "cellold2" //The cell looks the same whether something is in it or not
+	base_icon_state = "base"
+	occupied_icon_state = "base"
 	on_store_visible_message = "lets out a quiet hiss as $occupant$ disappears into the cloudy liquid."
 	on_enter_occupant_message = "You feel a cool touch on your skin as the cryogenic liquid permeates throughout your body. You go numb as your senses turn inward."
 	announce_despawn = FALSE
@@ -356,11 +363,10 @@
 /obj/machinery/computer/cryopod/ascent_spawn
 	name = "cryotank oversight console"
 	desc = "An interface between the gyne's brood and the cryotank oversight system."
-	color = COLOR_VIOLET
+	icon = 'mods/ascent/icons/obj/machines/machinery.dmi'
 	construct_state = null
 	storage_type = "lifeforms"
 	storage_name = "Cryotank Oversight Control"
-
 	var/mob/living/carbon/announcer
 
 /obj/machinery/computer/cryopod/ascent_spawn/Initialize()

@@ -17,7 +17,7 @@
 /obj/item/crab_egg
 	name = "blue crab egg"
 	desc = "Eggy egg."
-	icon = 'mods/ascent/icons/obj/items/egg.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "egg_single"
 
 /obj/decal/cleanable/blood/crab_sliz

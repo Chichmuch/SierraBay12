@@ -12,7 +12,7 @@
 	deform =                  'mods/ascent/icons/mob/alate/body.dmi'
 	damage_overlays =         'mods/ascent/icons/mob/alate/damage_mask.dmi'
 	blood_mask =              'mods/ascent/icons/mob/alate/blood_mask.dmi'
-	organs_icon =             'mods/ascent/icons/obj/items/organs.dmi'
+	organs_icon =             'mods/ascent/icons/obj/surgery.dmi'
 
 	blood_color =             "#660066"
 	flesh_color =             "#009999"

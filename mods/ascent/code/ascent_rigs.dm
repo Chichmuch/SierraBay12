@@ -65,7 +65,7 @@
 	desc = "A flechette nanofabricator and launch system of Ascent design."
 	interface_name = "flechette rifle"
 	interface_desc = "A flechette nanofabricator and launch system of Ascent design."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "rifle"
 	laser = /obj/item/gun/energy/particle/flechette
 
@@ -74,7 +74,7 @@
 	desc = "A mounted particle rifle of Ascent design."
 	interface_name = "particle rifle"
 	interface_desc = "A mounted particle rifle of Ascent design."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "rifle"
 	laser = /obj/item/gun/energy/particle
 
@@ -85,7 +85,7 @@
 	interface_name = "multitool"
 	interface_desc = "A limited-sentience integrated multitool capable of interfacing with any number of systems."
 	device = /obj/item/device/multitool/mantid
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "multitool"
 	usable = FALSE
 	selectable = TRUE
@@ -100,7 +100,7 @@
 	interface_name = "cable fabricator"
 	interface_desc = "A cable nanofabricator of Ascent design."
 	device = /obj/item/stack/cable_coil/fabricator
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "cablecoil"
 	usable = FALSE
 	selectable = TRUE
@@ -110,8 +110,8 @@
 	desc = "An electrical cutting torch of Ascent design."
 	interface_name = "welding arm"
 	interface_desc = "An electrical cutting torch of Ascent design."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
-	icon_state = "welder1"
+	icon = 'mods/ascent/icons/obj/items.dmi'
+	icon_state = "welder_arc1"
 	engage_string = "Toggle Welder"
 	device = /obj/item/weldingtool/electric/mantid
 	usable = TRUE
@@ -122,7 +122,7 @@
 	desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
 	interface_name = "modular clustertool"
 	interface_desc = "A complex assembly of self-guiding, modular heads capable of performing most manual tasks."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "clustertool"
 	engage_string = "Select Mode"
 	device = /obj/item/clustertool
@@ -211,7 +211,7 @@
 	desc = "A compact chemical dispenser of mantid design."
 	interface_name = "mantid chemical injector"
 	interface_desc = "A compact chemical dispenser of mantid design."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "injector"
 	charges = list(
 		list("bromide",				"bromide",				/datum/reagent/toxin/bromide, 30),
@@ -225,7 +225,7 @@
 	desc = "A compact chemical dispenser of mantid design."
 	interface_name = "serpentid chemical injector"
 	interface_desc = "A compact chemical dispenser of mantid design."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "injector"
 	charges = list(
 		list("tramadol",            "tramadol",            /datum/reagent/opiate/tramadol,     	  30),

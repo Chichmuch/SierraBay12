@@ -2,9 +2,7 @@
 /obj/structure/adherent_bath/ascent
 	// name = "mineral bath"
 	desc = "A mineral bath used by the Ascent species."
-
-/obj/structure/adherent_bath/ascent
-	color = "#a33fbf"
+	icon = 'mods/ascent/icons/obj/structures/structures.dmi'
 
 /obj/structure/adherent_bath/ascent/return_air()
 	var/datum/gas_mixture/ascentus = new(CELL_VOLUME, 310.15)

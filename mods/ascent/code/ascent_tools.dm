@@ -1,19 +1,19 @@
 /obj/item/weldingtool/electric/mantid
 	name = "alien welding tool"
 	desc = "An oddly shaped alien welding tool."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 
 /obj/item/device/multitool/mantid
 	name = "alien multitool"
 	desc = "An alien microcomputer of some kind."
-	icon = 'mods/ascent/icons/obj/items/ascent.dmi'
+	icon = 'mods/ascent/icons/obj/items.dmi'
 	icon_state = "multitool"
 
 
 /obj/item/clothing/gloves/anomaly_detector/mantid
-	color = COLOR_ASCENT_PURPLE
 	name = "mantid anomaly detector"
 	desc = "Some kind of strange alien anomolous detection technology."
+	icon = 'mods/ascent/icons/obj/items.dmi'
 
 /obj/item/clothing/gloves/anomaly_detector/mantid/New()
 	..()
