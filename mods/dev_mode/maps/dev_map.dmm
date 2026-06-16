@@ -23,6 +23,15 @@
 "dSB" = (
 /turf/simulated/floor/exoplanet/titan_water/minimal,
 /area/centcom)
+"eor" = (
+/obj/landmark/no_weather_here{
+	layer = 2
+	},
+/obj/machinery/phone{
+	phone_number = "1"
+	},
+/turf/unsimulated/floor/grass,
+/area/centcom)
 "eDA" = (
 /obj/random/biggun,
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
@@ -168,6 +177,15 @@
 "xBf" = (
 /obj/item/gun/energy/lasercannon,
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/centcom)
+"xXx" = (
+/obj/landmark/no_weather_here{
+	layer = 2
+	},
+/obj/machinery/phone{
+	phone_number = "2"
+	},
+/turf/unsimulated/floor/grass,
 /area/centcom)
 
 (1,1,1) = {"
@@ -397,7 +415,7 @@ djw
 djw
 djw
 dSB
-ooX
+eor
 ooX
 kWp
 ooX
@@ -457,7 +475,7 @@ cpC
 cpC
 cpC
 cpC
-ooX
+xXx
 ooX
 kWp
 ooX
