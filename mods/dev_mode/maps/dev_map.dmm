@@ -24,13 +24,10 @@
 /turf/simulated/floor/exoplanet/titan_water/minimal,
 /area/centcom)
 "eor" = (
-/obj/landmark/no_weather_here{
-	layer = 2
-	},
 /obj/machinery/phone{
 	phone_number = "1"
 	},
-/turf/unsimulated/floor/grass,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "eDA" = (
 /obj/random/biggun,
@@ -101,10 +98,10 @@
 /turf/simulated/floor/exoplanet/titan_water/middle,
 /area/liberia/atmos)
 "ooX" = (
-/obj/landmark/no_weather_here{
-	layer = 2
+/obj/machinery/phone{
+	phone_number = "3"
 	},
-/turf/unsimulated/floor/grass,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "pnX" = (
 /turf/simulated/floor/exoplanet/titan_water/maximum,
@@ -116,13 +113,10 @@
 /obj/landmark{
 	name = "Observer-Start"
 	},
-/obj/landmark/no_weather_here{
-	layer = 2
-	},
 /obj/landmark{
 	name = "JoinLateCryo"
 	},
-/turf/unsimulated/floor/grass,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "qMW" = (
 /obj/item/gun/projectile/pistol/m19,
@@ -166,6 +160,12 @@
 /obj/item/gun/energy/mindflayer,
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
+"wns" = (
+/obj/machinery/phone{
+	phone_number = "2"
+	},
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
+/area/centcom)
 "wVg" = (
 /obj/item/gun/energy/laser,
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
@@ -179,13 +179,10 @@
 /turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 "xXx" = (
-/obj/landmark/no_weather_here{
-	layer = 2
-	},
 /obj/machinery/phone{
-	phone_number = "2"
+	phone_number = "4"
 	},
-/turf/unsimulated/floor/grass,
+/turf/simulated/floor/exoplanet/concrete/reinforced/road,
 /area/centcom)
 
 (1,1,1) = {"
@@ -386,9 +383,9 @@ vuz
 djw
 dSB
 cpC
-ooX
-ooX
-ooX
+cpC
+cpC
+cpC
 cpC
 cpC
 cpC
@@ -415,11 +412,11 @@ djw
 djw
 djw
 dSB
+cpC
 eor
+cpC
 ooX
-kWp
-ooX
-ooX
+cpC
 cpC
 cpC
 uzJ
@@ -445,11 +442,11 @@ dSB
 dSB
 dSB
 dSB
-ooX
-kWp
+cpC
+cpC
 pSk
-kWp
-ooX
+cpC
+cpC
 cpC
 cpC
 uzJ
@@ -475,11 +472,11 @@ cpC
 cpC
 cpC
 cpC
+cpC
+wns
+cpC
 xXx
-ooX
-kWp
-ooX
-ooX
+cpC
 cpC
 cpC
 uzJ
@@ -506,9 +503,9 @@ cpC
 cpC
 cpC
 cpC
-ooX
-ooX
-ooX
+cpC
+cpC
+cpC
 cpC
 cpC
 cpC
